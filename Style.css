@@ -1,0 +1,134 @@
+/* Configurações Gerais e Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #faf7f8;
+    color: #333;
+}
+
+/* Banner Principal */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://unsplash.com') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Estrutura das Seções Alternadas (Mágica do Flexbox/Grid) */
+.info-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 450px;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+/* Inverte a ordem visual em telas grandes para fazer o zigue-zague */
+.grid-invertido .texto-box {
+    order: 2;
+}
+.grid-invertido .foto-box {
+    order: 1;
+}
+
+/* Caixa de Texto */
+.texto-box {
+    padding: 60px;
+}
+
+.texto-box h2 {
+    font-size: 2rem;
+    color: #8b263e; /* Tom vinho elegante lembrando esmalte */
+    margin-bottom: 20px;
+}
+
+.texto-box p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Tags de Destaque */
+.tag-beneficio {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #f3e6e8;
+    color: #8b263e;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 20px;
+}
+
+/* Caixa de Imagem */
+.foto-box {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.foto-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a foto preencher todo o espaço sem distorcer */
+    transition: transform 0.5s ease;
+}
+
+/* Efeito de zoom ao passar o mouse na foto */
+.foto-box img:hover {
+    transform: scale(1.05);
+}
+
+/* Rodapé */
+footer {
+    background-color: #222;
+    color: #aaa;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 768px) {
+    .info-section {
+        grid-template-columns: 1fr; /* Vira uma coluna única no celular */
+    }
+    
+    .grid-invertido .texto-box {
+        order: initial;
+    }
+    .grid-invertido .foto-box {
+        order: initial;
+    }
+    
+    .foto-box {
+        height: 300px;
+    }
+    
+    .texto-box {
+        padding: 30px 20px;
+    }
+}
+
