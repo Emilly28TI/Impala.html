@@ -7,7 +7,7 @@
 console.log("Essa é uma mensagem de console.")// //---imprime algo que você tenha no código---//
 
 function calcularidade(){
-    let idade = document.getElementByid("idade").value
+    let idade = Number(document.getElementByid("idade").value)
 
     if(idade>= 18){
         console.log("Sua idade é:" + idade)
